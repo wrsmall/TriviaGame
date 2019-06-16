@@ -1,0 +1,18 @@
+.titlefont{
+    font-family: 'Faster One', cursive;
+
+}
+.bgimage{
+    background-image: url(../images/monoco.jpg);
+    background-size: cover;
+}
+.sizing{
+    width:90%;
+    box-align: center;
+}
+.center{
+    align-self: center;
+}
+.mycolor{
+    background-color: lightgray;
+}
