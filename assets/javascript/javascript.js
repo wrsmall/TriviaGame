@@ -16,9 +16,9 @@ function question1() {
     var correctAnswer = "Three--3";
     questionTime = 12;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    decrease = setInterval(depend1, 1000);
     $("#remain").empty();
-    function depend() {
+    function depend1() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -86,12 +86,12 @@ function question2() {
     var correctAnswer = "Lewis Hamilton";
     questionTime = 12;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    decrease = setInterval(depend2, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend() {
+    function depend2() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -160,12 +160,12 @@ function question3() {
     var correctAnswer = "Ferrari";
     var questionTime = 12;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    decrease = setInterval(depend3, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend() {
+    function depend3() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -232,12 +232,12 @@ function question4() {
     var correctAnswer = "Monaco";
     var questionTime = 12;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    decrease = setInterval(depend4, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#remain").empty();
     $("#answers").empty();
-    function depend() {
+    function depend4() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -303,12 +303,12 @@ function question5() {
     var correctAnswer = "1.92 sec";
     var questionTime = 12;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    decrease = setInterval(depend5, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend() {
+    function depend5() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
