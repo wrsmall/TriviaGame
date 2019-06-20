@@ -3,7 +3,7 @@ var correct = 0;
 var unanswered = 5;
 var questionTime = 12;
 var firstTime = true;
-
+var decrease;
 function instruct() {
     $("#question").html("Welcome F1 fans lets test your knowledge of our sport. When the start button is pressed you will have one minute to correctly answer 5 questions");
     $('#remain').html('<button id="start" class="h4 rounded bg-success text-white w-25">' + "Start" + '</button');
@@ -14,15 +14,19 @@ function question1() {
     var answerChoice = ["One--1", "Two--2", "Three--3", "Four--4"];
     var correctAnswer = "Three--3";
     questionTime = 12;
-    var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    let decrease = setInterval(depend, 1000);
+    console.log("setInterval decrease: " + decrease);
     $("#remain").empty();
     function depend() {
+        console.log("depend decrease: " + decrease);
+
         questionTime--;
         $("#timer").text(questionTime);
-        console.log(questionTime);
+        console.log("questionTime: " + questionTime);
         if (questionTime === 0) {
+            console.log("clearInterval decrease: " + decrease);
+
             clearInterval(decrease);
             noAnswer1();
         }
@@ -36,9 +40,10 @@ function question1() {
     }
     //$(document).on("click", ".answer1", checkAnswer1);
     if (firstTime) $(document).on("click", ".answer1", checkAnswer1);
-
+    console.log("a1: firsttime " + firstTime);
     $("#question").html("How many tire compounds does Pirelli make avialible for each race?");
     function checkAnswer1() {
+        console.log("checkAnswer1");
         var userGuess = $(this).attr("data-name");
         if (userGuess === correctAnswer) {
             correct++;
@@ -49,11 +54,12 @@ function question1() {
             unanswered--;
             answrW1();
         };
-        console.log(incorrect);
-        console.log(unanswered);
+        console.log("incorrect: " + incorrect);
+        console.log("unanswered: " + unanswered);
 
     };
     function answrC1() {
+        console.log("clearInterval decrease: " + decrease);
         clearInterval(decrease);
         $("#question").html("Correct!!!!");
         $("#question").removeClass("text-danger h5");
@@ -64,6 +70,7 @@ function question1() {
 
     };
     function answrW1() {
+        console.log("clearInteval decrease: " + decrease);
         clearInterval(decrease);
         $("#question").html("Incorrect!!!!");
         $("#question").removeClass("text-danger h5");
@@ -85,18 +92,23 @@ function question2() {
     var answerChoice = ["Lance Stroll", "Lewis Hamilton", "Matt Verstappen", "Charles Leclerc"];
     var correctAnswer = "Lewis Hamilton";
     questionTime = 12;
-    var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    let decrease = setInterval(depend, 1000);
+    console.log("decrease: " + decrease);
+
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
     function depend() {
+        console.log("depend decrease: " + decrease);
+
         questionTime--;
         $("#timer").text(questionTime);
-        console.log(questionTime);
+        console.log("questionTime: " + questionTime);
         if (questionTime === 0) {
+            console.log("clearInteval decrease: " + decrease);
+
             clearInterval(decrease);
             noAnswer2();
         }
@@ -111,8 +123,12 @@ function question2() {
 
     }
     if (firstTime) $(document).on("click", ".answer2", checkAnswer2);
+    console.log("a2: firsttime " + firstTime);
+
     $("#question").html("Who was last years champion?");
     function checkAnswer2() {
+        console.log("checkAnwers2");
+
         var userGuess = $(this).attr("data-name");
         if (userGuess === correctAnswer) {
             correct++;
@@ -123,10 +139,12 @@ function question2() {
             unanswered--;
             answrW2();
         };
-        console.log(incorrect);
-        console.log(unanswered);
+        console.log("incorrect: " + incorrect);
+        console.log("unanswered: " + unanswered);
     };
     function answrC2() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Correct!!!!");
         $("#question").removeClass("text-danger h5");
@@ -137,6 +155,8 @@ function question2() {
 
     }
     function answrW2() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Incorrect!!!!");
         $("#question").removeClass("text-danger h5");
@@ -160,18 +180,23 @@ function question3() {
     var answerChoice = ["Ferrari", "Williams", "Mercedes", "McLaren"];
     var correctAnswer = "Ferrari";
     var questionTime = 12;
-    var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    let decrease = setInterval(depend, 1000);
+    console.log("setInteval decrease: " + decrease);
+
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
     function depend() {
+        console.log("depend decrease: " + decrease);
+
         questionTime--;
         $("#timer").text(questionTime);
-        console.log(questionTime);
+        console.log("questionTime: " + questionTime);
         if (questionTime === 0) {
+            console.log("clearInteval decrease: " + decrease);
+
             clearInterval(decrease);
             noAnswer3();
         }
@@ -182,69 +207,80 @@ function question3() {
         a.attr("data-name", answerChoice[i]);
         a.text(answerChoice[i]);
         $("#answers").append(a);
+    }
+    if (firstTime) $(document).on("click", ".answer3", checkAnswer3);
+    console.log("a3: firsttime " + firstTime);
 
-        if (firstTime) $(document).on("click", ".answer3", checkAnswer3);
-        $("#question").html("What manufacture has the most Constructors' World Championships?");
-        function checkAnswer3() {
-            var userGuess = $(this).attr("data-name");
-            if (userGuess === correctAnswer) {
-                correct++;
-                unanswered--;
-                answrC3();
-            } else {
-                incorrect++;
-                unanswered--;
-                answrW3();
-            };
-            console.log(incorrect);
-            console.log(unanswered);
+    $("#question").html("What manufacture has the most Constructors' World Championships?");
+    function checkAnswer3() {
+        console.log("checkAnswer3");
+        var userGuess = $(this).attr("data-name");
+        if (userGuess === correctAnswer) {
+            correct++;
+            unanswered--;
+            answrC3();
+        } else {
+            incorrect++;
+            unanswered--;
+            answrW3();
         };
-        function answrC3() {
-            clearInterval(decrease);
-            $("#question").html("Correct!!!!");
-            $("#question").removeClass("text-danger h5");
-            $("#question").addClass("text-white h1 ");
-            $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
-            $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
-            setTimeout(function () { question4(); }, 5000);
-
-        }
-        function answrW3() {
-            clearInterval(decrease);
-            $("#question").html("Incorrect!!!!");
-            $("#question").removeClass("text-danger h5");
-            $("#question").addClass("text-white h1 ");
-            $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
-            $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
-            setTimeout(function () { question4(); }, 5000);
-        };
-        function noAnswer3() {
-            $("#question").html("Times Up!!!!");
-            $("#question").removeClass("text-danger h5");
-            $("#question").addClass("text-white h1 ");
-            $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
-            $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
-            setTimeout(function () { question4(); }, 5000);
-        };
-
+        console.log("incorrect: " + incorrect);
+        console.log("unanswered: " + unanswered);
     };
+    function answrC3() {
+        console.log("clearInteval decrease: " + decrease);
+
+        clearInterval(decrease);
+        $("#question").html("Correct!!!!");
+        $("#question").removeClass("text-danger h5");
+        $("#question").addClass("text-white h1 ");
+        $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
+        $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
+        setTimeout(function () { question4(); }, 5000);
+
+    }
+    function answrW3() {
+        console.log("clearInteval decrease: " + decrease);
+
+        clearInterval(decrease);
+        $("#question").html("Incorrect!!!!");
+        $("#question").removeClass("text-danger h5");
+        $("#question").addClass("text-white h1 ");
+        $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
+        $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
+        setTimeout(function () { question4(); }, 5000);
+    };
+    function noAnswer3() {
+        $("#question").html("Times Up!!!!");
+        $("#question").removeClass("text-danger h5");
+        $("#question").addClass("text-white h1 ");
+        $("#answers").html(correctAnswer + " has the most Constructors' World Championships");
+        $("#remain").html("<img src='assets/images/ferrari.jpg'width='225px' height='225px'>")
+        setTimeout(function () { question4(); }, 5000);
+    };
+
 };
 function question4() {
     var answerChoice = ["Spanish", "Hungarian", "Austrian", "Monaco"];
     var correctAnswer = "Monaco";
     var questionTime = 12;
-    var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    let decrease = setInterval(depend, 1000);
+    console.log("setInteval decrease: " + decrease);
+
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#remain").empty();
     $("#answers").empty();
     function depend() {
+        console.log("depend decrease: " + decrease);
+
         questionTime--;
         $("#timer").text(questionTime);
-        console.log(questionTime);
+        console.log("questionTime: " + questionTime);
         if (questionTime === 0) {
+            console.log("clearInteval decrease: " + decrease);
+
             clearInterval(decrease);
             noAnswer4();
         }
@@ -258,8 +294,12 @@ function question4() {
 
     }
     if (firstTime) $(document).on("click", ".answer4", checkAnswer4);
+    console.log("a4: firsttime " + firstTime);
+
     $("#question").html("What Grad Prix is usually held on Memorial Day Weekend?");
     function checkAnswer4() {
+        console.log("checkAnswer4");
+
         var userGuess = $(this).attr("data-name");
         if (userGuess === correctAnswer) {
             correct++;
@@ -270,10 +310,12 @@ function question4() {
             unanswered--;
             answrW4();
         };
-        console.log(incorrect);
-        console.log(unanswered);
+        console.log("incorrect: " + incorrect);
+        console.log("unanswered: " + unanswered);
     };
     function answrC4() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Correct!!!!");
         $("#question").removeClass("text-danger h5");
@@ -284,6 +326,8 @@ function question4() {
 
     }
     function answrW4() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Incorrect!!!!");
         $("#question").removeClass("text-danger h5");
@@ -305,18 +349,23 @@ function question5() {
     var answerChoice = ["0.50 sec", "3.12 sec", "1.92 sec", "2.0 sec"];
     var correctAnswer = "1.92 sec";
     var questionTime = 12;
-    var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend, 1000);
+    let decrease = setInterval(depend, 1000);
+    console.log("setInteval decrease: " + decrease);
+
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
     function depend() {
+        console.log("depend decrease: " + decrease);
+
         questionTime--;
         $("#timer").text(questionTime);
-        console.log(questionTime);
+        console.log("questionTime: " + questionTime);
         if (questionTime === 0) {
+            console.log("clearInteval decrease: " + decrease);
+
             clearInterval(decrease);
             noAnswer5();
         }
@@ -330,8 +379,11 @@ function question5() {
 
     }
     if (firstTime) $(document).on("click", ".answer5", checkAnswer5);
+    console.log("a5: firsttime " + firstTime);
+
     $("#question").html("What is the fastest Pit Stop time ever recorded in F1?");
     function checkAnswer5() {
+        console.log("checkAnswer5");
         var userGuess = $(this).attr("data-name");
         if (userGuess === correctAnswer) {
             correct++;
@@ -342,10 +394,12 @@ function question5() {
             unanswered--;
             answrW5();
         };
-        console.log(incorrect);
-        console.log(unanswered);
+        console.log("incorrect: " + incorrect);
+        console.log("unanswered: " + unanswered);
     };
     function answrC5() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Correct!!!!");
         $("#question").removeClass("text-danger h5");
@@ -356,6 +410,8 @@ function question5() {
 
     }
     function answrW5() {
+        console.log("clearInteval decrease: " + decrease);
+
         clearInterval(decrease);
         $("#question").html("Incorrect!!!!");
         $("#question").removeClass("text-danger h5");
@@ -389,9 +445,9 @@ function restart() {
     incorrect = 0;
     correct = 0;
     unanswered = 5;
-    console.log(incorrect);
-    console.log(correct);
-    console.log(unanswered);
+    console.log("incorrect: " + incorrect);
+    console.log("correct: " + correct);
+    console.log("unanswered: " + unanswered);
     $("#questions").empty();
     $("#answers").empty();
     $("#question").removeClass("text-white h1");
