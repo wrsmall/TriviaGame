@@ -14,7 +14,7 @@ function question1() {
     var answerChoice = ["One--1", "Two--2", "Three--3", "Four--4"];
     var correctAnswer = "Three--3";
     questionTime = 12;
-    let decrease;
+    var decrease;
     $("#timer").html(questionTime);
     decrease = setInterval(depend1, 1000);
     $("#remain").empty();
@@ -85,7 +85,7 @@ function question2() {
     var answerChoice = ["Lance Stroll", "Lewis Hamilton", "Matt Verstappen", "Charles Leclerc"];
     var correctAnswer = "Lewis Hamilton";
     questionTime = 12;
-    let decrease;
+    var decrease;
     $("#timer").html(questionTime);
     decrease = setInterval(depend2, 1000);
     $("#question").removeClass("text-white h1");
@@ -160,7 +160,7 @@ function question3() {
     var answerChoice = ["Ferrari", "Williams", "Mercedes", "McLaren"];
     var correctAnswer = "Ferrari";
     var questionTime = 12;
-    let decrease;
+    var decrease;
     $("#timer").html(questionTime);
     decrease = setInterval(depend3, 1000);
     $("#question").removeClass("text-white h1");
@@ -233,7 +233,7 @@ function question4() {
     var answerChoice = ["Spanish", "Hungarian", "Austrian", "Monaco"];
     var correctAnswer = "Monaco";
     var questionTime = 12;
-    let decrease;
+    var decrease;
     $("#timer").html(questionTime);
     decrease = setInterval(depend4, 1000);
     $("#question").removeClass("text-white h1");
@@ -305,7 +305,7 @@ function question5() {
     var answerChoice = ["0.50 sec", "3.12 sec", "1.92 sec", "2.0 sec"];
     var correctAnswer = "1.92 sec";
     var questionTime = 12;
-    let decrease;
+    var decrease;
     $("#timer").html(questionTime);
     decrease = setInterval(depend5, 1000);
     $("#question").removeClass("text-white h1");
@@ -386,9 +386,6 @@ function results() {
 
 };
 function restart() {
-    // $(incorrect).val(0);
-    // $(correct).val(0);
-    // $(unanswered).val(5);
     incorrect = 0;
     correct = 0;
     unanswered = 5;
