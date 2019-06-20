@@ -16,9 +16,9 @@ function question1() {
     questionTime = 12;
     var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend1, 1000);
+    decrease = setInterval(depend, 1000);
     $("#remain").empty();
-    function depend1() {
+    function depend() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -87,12 +87,12 @@ function question2() {
     questionTime = 12;
     var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend2, 1000);
+    decrease = setInterval(depend, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend2() {
+    function depend() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -162,12 +162,12 @@ function question3() {
     var questionTime = 12;
     var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend3, 1000);
+    decrease = setInterval(depend, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend3() {
+    function depend() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -235,12 +235,12 @@ function question4() {
     var questionTime = 12;
     var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend4, 1000);
+    decrease = setInterval(depend, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#remain").empty();
     $("#answers").empty();
-    function depend4() {
+    function depend() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
@@ -307,12 +307,12 @@ function question5() {
     var questionTime = 12;
     var decrease;
     $("#timer").html(questionTime);
-    decrease = setInterval(depend5, 1000);
+    decrease = setInterval(depend, 1000);
     $("#question").removeClass("text-white h1");
     $("#question").addClass("text-danger h5 ");
     $("#answers").empty();
     $("#remain").empty();
-    function depend5() {
+    function depend() {
         questionTime--;
         $("#timer").text(questionTime);
         console.log(questionTime);
