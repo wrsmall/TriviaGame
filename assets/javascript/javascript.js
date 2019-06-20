@@ -314,7 +314,7 @@ function question5() {
         console.log(questionTime);
         if (questionTime === 0) {
             clearInterval(decrease);
-            noAnswer1();
+            noAnswer5();
         }
     }
     for (i = 0; i < answerChoice.length; i++) {
@@ -360,7 +360,7 @@ function question5() {
         $("#remain").html("<img src='assets/images/pit-stop.jpg'width='225px' height='225px'>")
         setTimeout(function () { results(); }, 5000);
     };
-    function noAnswer4() {
+    function noAnswer5() {
         $("#question").html("Times Up!!!!");
         $("#question").removeClass("text-danger h5");
         $("#question").addClass("text-white h1 ");
